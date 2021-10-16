@@ -2,6 +2,7 @@ import re
 from logging import getLogger
 
 import chromedriver_binary
+from webdriver_manager.chrome import ChromeDriverManager
 import pyocr
 import pyocr.builders
 from django.conf import settings
@@ -42,7 +43,9 @@ class Wagyuer:
         # setting chrome
         option = Options()
         option.add_argument("--headless")
-        driver = webdriver.Chrome(options=option)
+ 
+        driver = webdriver.Chrome(ChromeDriverManager().install(),options=option)
+        driver.get('https://google.com')
 
         wagyu_infomation = {}
         # get wagyu info
