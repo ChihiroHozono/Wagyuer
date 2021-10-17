@@ -9,8 +9,12 @@
   <meta name="twitter:card" content="photo" />
   <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0/dist/vue.global.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <!-- for Element+ -->
+  <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+  <script src="https://unpkg.com/element-plus"></script>
+  <!-- for Element+ -->
 </head>
 
 <body style="margin: 0; background: rgba(255, 255, 255, 1)">
@@ -70,7 +74,7 @@
 </body>
 
 <script>
-  Vue.createApp({
+  const app = Vue.createApp({
     delimiters: ['[[', ']]'],
     data() {
       return {
@@ -151,7 +155,10 @@
           })
       }
     }
-  }).mount('#wagyuerVue');
+  })
+
+  app.use(ElementPlus);
+  app.mount('#wagyuerVue');
 
 </script>
 
