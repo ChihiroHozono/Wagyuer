@@ -3,5 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-/media/*
-/log/*
+media/*
+log/*
+wagyuer/node_modules/*
